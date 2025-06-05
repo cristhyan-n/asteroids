@@ -35,10 +35,10 @@ class Player(CircleShape):
             self.move(dt)
         if keys[pygame.K_s]:
             self.move(-dt)
-        if keys[pygame.K_SPACE]:
-            if self.shot_delay > 0:
-                self.shot_delay -= dt
-            else:
+        if self.shot_delay > 0:
+            self.shot_delay -= dt
+        else:
+            if keys[pygame.K_SPACE]:
                 self.shoot()
 
     def move(self, dt):

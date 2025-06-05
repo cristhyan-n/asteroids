@@ -6,7 +6,7 @@ from asteroidfield import *
 
 
 def main():
-    pygame.init
+    pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     fps = pygame.time.Clock()
     updatable = pygame.sprite.Group()
@@ -39,7 +39,7 @@ def main():
             for bullet in shoots:
                 if bullet.collision_check(thing):
                     bullet.kill()
-                    thing.kill()
+                    thing.split()
 
         pygame.display.flip()
 
